@@ -1,6 +1,6 @@
 # node-net-opt
 
-Debian 12 / Ubuntu 22.04 代理节点网络栈一键优化（SS / Hy2 / VLESS-Reality）。
+Debian 12 / Ubuntu 22.04 一键优化（SS / Hy2 / VLESS-Reality）。
 
 ## 一键执行
 
