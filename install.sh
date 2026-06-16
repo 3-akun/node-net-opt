@@ -236,6 +236,9 @@ info "=== 并发 ==="
 sysctl net.netfilter.nf_conntrack_max 2>/dev/null || hint "conntrack 不可用（容器常见）"
 systemctl show --property DefaultLimitNOFILE 2>/dev/null || true
 echo
-hint "请重启代理: systemctl restart hysteria-server sing-box xray 2>/dev/null"
-hint "验证 NOFILE: cat /proc/\$(pidof xray 2>/dev/null || pidof sing-box 2>/dev/null || echo 1)/limits | grep 'Max open files'"
+hint "安装后（Hy2 示例，drop-in 需重启后生效）:"
+hint "  systemctl restart hysteria-server"
+hint "  cat /proc/\$(systemctl show -p MainPID --value hysteria-server)/limits | grep 'Max open files'"
+hint "  systemctl status hysteria-server --no-pager"
+hint "其他代理: systemctl restart sing-box xray 2>/dev/null"
 hint "回滚: rm -f $SYSCTL_CONF $MODULES_CONF $LIMITS_CONF $SYSTEMD_CONF /etc/systemd/system/*.service.d/99-node-net-opt.conf && systemctl daemon-reexec && sysctl --system"
