@@ -5,7 +5,7 @@ Debian 12 / Ubuntu 22.04 代理节点网络栈一键优化（SS / Hy2 / VLESS-Re
 ## 一键执行
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/3-akun/v3/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/3-akun/node-net-opt/main/install.sh | bash
 ```
 
 ## 功能
