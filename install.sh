@@ -185,7 +185,8 @@ DefaultLimitNOFILE=${NOFILE}
 EOF
 
 apply_service_dropin(){
-  local svc="$1" dir="/etc/systemd/system/${svc}.service.d"
+  local svc="$1"
+  local dir="/etc/systemd/system/${svc}.service.d"
   systemctl cat "$svc" >/dev/null 2>&1 || return 0
   mkdir -p "$dir"
   cat >"${dir}/99-node-net-opt.conf" <<EOF
